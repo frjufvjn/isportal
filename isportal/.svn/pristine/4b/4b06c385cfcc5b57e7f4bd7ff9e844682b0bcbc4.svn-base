@@ -1,0 +1,23 @@
+package com.hansol.isportal.dbservice.sqlprovider;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.hansol.isportal.dbservice.service.DbSvcServiceImpl;
+
+public class DbSvcGetSQL {
+	
+	public String getSql(Map<String,Object> paramMap) throws Exception {
+		DbSvcServiceImpl ds = new DbSvcServiceImpl();
+		return ds.getSqlBySvcNo(paramMap);
+	}
+	
+	public String getSqlByList(List<Map<String,Object>> paramList) throws Exception {
+//		DbSvcServiceImpl ds = new DbSvcServiceImpl();
+//		Map<String,Object> paramMap = new HashMap<String,Object>();
+//		paramMap.put("db_svc_no", paramList.get(0).get("db_svc_no"));
+//		return ds.getSqlBySvcNo(paramMap);
+		return "insert into springboard (no,title,content) values (#{no},#{title},#{content})";
+	}
+}

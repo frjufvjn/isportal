@@ -1,0 +1,28 @@
+package com.hansol.isportal.dbservice.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.hansol.isportal.dbservice.config.ConnectionFactory;
+import com.hansol.isportal.dbservice.dao.DbSvcDAO;
+
+public class DbSvcServiceImpl implements DbSvcService {
+	
+	public List<Map<String,Object>> getListTest() throws Exception {
+		SqlSession session = ConnectionFactory.getSession().openSession();
+		DbSvcDAO dao =session.getMapper(DbSvcDAO.class);
+			List<Map<String,Object>> list = dao.getListTest();
+		session.close();
+		return list;
+	}
+	
+	public List<Map<String,Object>> getListTestParam(String cm_svc_no) throws Exception {
+		SqlSession session = ConnectionFactory.getSession().openSession();
+		DbSvcDAO dao =session.getMapper(DbSvcDAO.class);
+			List<Map<String,Object>> list = dao.getListTestParam(cm_svc_no);
+		session.close();
+		return list;
+	}
+}

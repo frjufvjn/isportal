@@ -1,0 +1,8 @@
+################################################################################
+# JDBC
+################################################################################
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://10.1.14.242:3306/portal_db?characterEncoding=utf8
+jdbc.username=portal
+jdbc.password=portal@hansol
+jdbc.defaultAutoCommit=false

@@ -1,0 +1,13 @@
+package com.hansol.isportal.dbservice.sqlprovider;
+
+import java.util.Map;
+
+import com.hansol.isportal.dbservice.service.DbSvcServiceImpl;
+
+public class DbSvcGetSQL {
+	
+	public String getSql(Map<String,Object> paramMap) throws Exception {
+		DbSvcServiceImpl ds = new DbSvcServiceImpl();
+		return ds.getSqlBySvcNo(paramMap);
+	}	
+}

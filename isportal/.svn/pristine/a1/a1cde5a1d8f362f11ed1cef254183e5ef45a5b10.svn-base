@@ -1,0 +1,9 @@
+package com.hansol.isportal.dbservice.service;
+
+import java.util.List;
+import java.util.Map;
+
+public abstract interface DbSvcService {
+	public abstract List<Map<String,Object>> getListTest() throws Exception;
+	public abstract List<Map<String,Object>> getListTestParam(String cm_svc_no) throws Exception;
+}

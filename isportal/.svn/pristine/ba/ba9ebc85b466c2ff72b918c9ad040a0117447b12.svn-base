@@ -1,0 +1,11 @@
+package com.hansol.isportal.dbservice.dao;
+
+public class DbSvcGetSQL {
+	public String getTestSql() {
+		return "select * from tp_cm_service";
+	}
+	
+	public String getTestSqlParam() {
+		return "select * from tp_cm_service where cm_svc_no = #{cm_svc_no}";
+	}
+}

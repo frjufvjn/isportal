@@ -1,0 +1,27 @@
+package com.hansol.isportal.dbservice.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
+
+public abstract interface DbSvcDAO {
+	/*
+	 * 1. Annotation을 활용한 방법  
+	String SQL_SELECT_TEST = "select * from tp_cm_service";
+	@Select(SQL_SELECT_TEST)
+	public abstract List<Map<String,Object>> getListTest() throws Exception;*/
+	
+	
+	/**
+	 * 2. SQL을 가져와서 활용하는 방법 
+	 * @return
+	 * @throws Exception
+	 */
+	@SelectProvider(type = DbSvcGetSQL.class, method="getTestSql")
+	public abstract List<Map<String,Object>> getListTest() throws Exception;
+	
+	@SelectProvider(type = DbSvcGetSQL.class, method="getTestSqlParam")
+	public abstract List<Map<String,Object>> getListTestParam(String cm_svc_no) throws Exception;
+}

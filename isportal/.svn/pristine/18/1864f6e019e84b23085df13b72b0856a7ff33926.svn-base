@@ -1,0 +1,19 @@
+package com.hansol.isportal.dbservice.service;
+
+import java.util.List;
+import java.util.Map;
+
+public abstract interface MainService
+{
+	public abstract String getToday();
+
+	public abstract List getList(Map<String, Object> paramMap);
+
+	public abstract List<Object> getHeader(Map<String, Object> paramMap);
+
+	public abstract List<Object> getRequest(Map<String, Object> paramMap);
+
+	public abstract List<Object> getResponse(Map<String, Object> paramMap);
+
+	public abstract List<Object> getResponseList(Map<String, Object> paramMap);
+}
