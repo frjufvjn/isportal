@@ -50,8 +50,7 @@ public class RestFulController
 		response.addHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
 		response.addHeader("Access-Control-Allow-Headers", "X-Requested-With");
 		
-		DbSvcServiceImpl ds = new DbSvcServiceImpl();
-		List<Map<String,Object>> res = ds.getListParam(paramMap);
+		List<Map<String,Object>> res = DbSvcServiceImpl.getInstance().getListParam(paramMap);
 		System.out.println(res);
 		return res;
 	}
@@ -78,8 +77,7 @@ public class RestFulController
 		
 		boolean svcRes = true;
 		if(!paramList.isEmpty()) {
-			DbSvcServiceImpl ds = new DbSvcServiceImpl();
-			svcRes = ds.doInsert(paramList);
+			svcRes = DbSvcServiceImpl.getInstance().doInsert(paramList);
 		}
 		
 		Map<String,Object> res = new HashMap<String,Object>();
