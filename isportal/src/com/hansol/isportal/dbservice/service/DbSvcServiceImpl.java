@@ -23,6 +23,22 @@ public class DbSvcServiceImpl {
 //	    session.commit();
 //	}
 	
+	private volatile static DbSvcServiceImpl instance;
+
+	public static DbSvcServiceImpl getInstance()
+	{
+		if (instance == null)
+		{
+			synchronized (DbSvcServiceImpl.class)
+			{
+				if (instance == null)
+					instance = new DbSvcServiceImpl();
+			}
+		}
+
+		return instance;
+	}
+	
 	public String getSqlBySvcNo(Map paramMap) throws Exception {
 		SqlSession session = ConnectionFactory.getSession().openSession();
 		DbSvcDAO dao =session.getMapper(DbSvcDAO.class);
