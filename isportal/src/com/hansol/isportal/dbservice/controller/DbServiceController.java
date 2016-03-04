@@ -29,4 +29,9 @@ public class DbServiceController {
 	public void hello(@RequestParam Map<String,Object> paramMap, ModelMap model) {
 		model.put("title", "Hello World!!");
 	}
+	
+	@RequestMapping({"board.do"})
+	public void test(@RequestParam Map<String,Object> paramMap, ModelMap model) {
+		model.put("title", "Hello World!!");
+	}
 }
